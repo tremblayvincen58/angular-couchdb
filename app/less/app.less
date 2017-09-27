@@ -1,0 +1,99 @@
+/**
+ *
+ *
+ */
+
+@fontFamily:      'Open Sans', Helvetica, Arial, sans-serif;
+@fontBold:        700;
+@fontLight:       300;
+@fontNormal:      400;
+@fontSemiBold:    600;
+@fontHeavy:       800;
+
+@white:           #FFFFFF;
+@black:           #000000;
+
+/*
+* Basic UI  ==================================================================
+*
+*/
+
+header {
+  background-color: @black;
+  display: table;
+
+  .breadcrumb {
+    color: @white;
+    font-size: .67em;
+    list-style: none;
+    padding: 15px 0 15px 15px;
+
+    li a {
+      text-decoration: none;
+      color: @white;
+    }
+
+    > li {
+        display: inline-block;
+        padding: 0 4px;
+    }
+
+    > li + li:before {
+        padding: 0 3px;
+        color: @white;
+        content: "/\00a0";
+    }
+
+    span {
+      color: @white;
+    }
+
+    span.fa {
+      color: @white;
+      padding-right: 4px;
+    }
+  }
+}
+
+.button,
+.test {
+  font-size: 14pt;
+  height: auto;
+  line-height: 22pt;
+  margin: 10px;
+  padding: 10px;
+  width: 75%;
+}
+
+.button {
+  background-color: #222;
+  color: white;
+}
+
+.button:hover {
+  cursor: pointer;
+  color: orange;
+}
+
+.button i,
+.button:hover i {
+  padding-right: 8px;
+}
+
+.test {
+  background-color: @white;
+  border: 1px solid #bbb;  
+
+  .passed,
+  .fa.fa-thumbs-o-up {
+    color: green;
+  }
+  .failed,
+  .fa.fa-thumbs-down {
+    color: #B22222;
+  }
+
+  .data {
+    color: teal;
+  }
+}

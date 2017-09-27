@@ -1,0 +1,10 @@
+{
+    "_id": "_design/test",
+    "_rev": "2-4d3137fda93cff9d09488cb40ada20f9",
+    "language": "javascript",
+    "views": {
+        "byNumber": {
+            "map": "function(doc) {\nif ( doc.type == \"Dead President\" ) {\n    emit(doc.presidentNumber, null);\n  }\n}"
+        }
+    }
+}

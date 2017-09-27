@@ -1,0 +1,329 @@
+/**
+ *  LAYOUT   =================================================================== 
+ *
+ *  Use: 
+ *      General page layout rules.
+ *
+ *  Versions:
+ *      0.1 - 06-Dec-2013 
+ *
+ *   ===========================================================================  
+ */
+/*
+  LESS CONTANTS
+ */
+/**
+ *  GLOBAL rules of layout
+ *  
+ */
+
+/* Apply a natural box layout model to all elements */
+
+*,
+*:before,
+:before,
+*:after,
+:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif !important;
+  font-size: 16pt !important;
+  overflow-x: hidden;
+  height: 100%;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  margin: 0px;
+  min-width: 320px;
+  padding: 0px;
+  /*   UI horizontal menu   */
+
+}
+body header {
+  display: table;
+  height: 2em;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+body .page,
+body .view-container,
+body .view {
+  height: 100%;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+body .ui.menu.horizontal {
+  color: #49504f;
+  margin-bottom: .75em;
+  position: relative;
+  height: 2em;
+}
+body .ui.menu.horizontal li {
+  border: 1px solid #f0f0f0;
+  color: #333333;
+  display: inline-block;
+  list-style: none;
+  margin: 0 .80em 0 0;
+  padding: 10px 13px 9px;
+}
+body .ui.menu.horizontal li:hover {
+  background-color: #b9b9b9;
+  border: 1px solid #b9b9b9;
+  color: black;
+  cursor: pointer;
+}
+body .ui.menu.horizontal li.selected {
+  background-color: #111111;
+  border: 1px solid #111111;
+  color: white;
+}
+body .ui.menu.horizontal li:last-child {
+  margin-right: 0;
+}
+.details,
+.features,
+.headlines,
+.tiles {
+  position: relative;
+  margin: 4.5em 2em 0 5em;
+}
+.features {
+  margin: 0em 2em 1em 5em;
+}
+.tiles {
+  margin-top: 0;
+  min-height: 6em;
+}
+.tiles .group {
+  min-width: 480px;
+}
+.tiles .tile {
+  background-color: white;
+  color: #111111;
+  display: inline-block;
+  height: 7em;
+  margin: 4px 4px 0 4px;
+  min-width: 7em;
+  position: relative;
+  width: 7em;
+}
+.tiles .tile a.client,
+.tiles .tile a.client:active,
+.tiles .tile a.client:visited,
+.tiles .tile a.client:hover,
+.tiles .tile a.home,
+.tiles .tile a.home:active,
+.tiles .tile a.home:visited,
+.tiles .tile a.home:hover {
+  color: black;
+  display: block;
+  height: 7em;
+  margin: 0;
+  min-width: 7em;
+  text-decoration: none;
+  width: 7em;
+}
+.tiles .tile .abbreviation,
+.tiles .tile .description {
+  font-weight: 300;
+  position: absolute;
+}
+.tiles .tile .abbreviation {
+  text-transform: uppercase;
+}
+.tiles .tile .description {
+  font-size: .6em;
+}
+.tiles .tile a.client:hover,
+.tiles .tile a.home:hover {
+  color: white;
+  text-shadow: 1px 1px 0 #222222;
+}
+.tiles .tile a.client .abbreviation {
+  font-size: 1.8em;
+  left: 5px;
+  top: 2px;
+}
+.tiles .tile a.client .description {
+  left: 6px;
+  top: 50px;
+}
+.tiles .tile a.home {
+  height: 10em;
+  min-width: 10em;
+  width: 10em;
+}
+.tiles .tile a.home .abbreviation {
+  font-size: 2em;
+  color: white;
+  left: 10px;
+  top: 10px;
+}
+.tiles .tile a.home .description {
+  color: white;
+  bottom: 10px;
+  right: 10px;
+  text-align: right;
+}
+.tiles .tile .orders {
+  bottom: 5px;
+  font-size: 2.5em;
+  position: absolute;
+  right: 5px;
+}
+.tiles .tile:hover {
+  background-color: #a07f00;
+  color: white;
+  cursor: pointer;
+}
+.tiles .tile.home {
+  height: 10em;
+  width: 10em;
+}
+.tiles .tile.new {
+  background-color: green;
+  margin-right: -1px;
+}
+.tiles .tile.new a,
+.tiles .tile.new a:active,
+.tiles .tile.new a:visited,
+.tiles .tile.new a:hover {
+  color: white;
+  display: block;
+  height: 7em;
+  margin: 0;
+  min-width: 7em;
+  text-decoration: none;
+  width: 7em;
+}
+.tiles .tile.new .abbreviation.add {
+  background: transparent url(../img/svg/add.svg) 7px 9px no-repeat;
+  background-size: 60px 60px;
+  height: 80px;
+  width: 80px;
+}
+.tiles .tile.new .description.add {
+  color: white;
+  top: 125px;
+  right: 10px;
+  text-align: right;
+}
+.tiles .tile.new:hover {
+  background-color: #00aa00;
+  border-color: #00aa00;
+  margin-right: -1px;
+}
+.tiles .tile.red {
+  background-color: firebrick;
+}
+.tiles .tile.blue {
+  background-color: blue;
+}
+.tiles .tile.cobalt {
+  background-color: #0047ab;
+}
+.tiles .tile.darkgreen {
+  background-color: #003d18;
+}
+.tiles .tile.green {
+  background-color: green;
+}
+.tiles .tile.purple {
+  background-color: purple;
+}
+.tiles .tile.brown {
+  background-color: #873514;
+}
+.tiles .tile.orange {
+  background-color: #c35817;
+}
+.tiles .tile.teal {
+  background-color: teal;
+}
+.tiles .tile.yellow {
+  background-color: yellow;
+}
+.tiles .tile.gold {
+  background-color: gold;
+}
+.tiles .tile.white {
+  background-color: white;
+}
+.tiles .tile.black {
+  background-color: black;
+}
+/*  Columns   ================================================================*/
+
+.width-name {
+  max-width: 240px;
+  min-width: 200px;
+}
+.width-id {
+  max-width: 100px;
+  min-width: 50px;
+}
+.width-date {
+  max-width: 100px;
+  min-width: 90px;
+}
+.width-type {
+  max-width: 100px;
+  min-width: 75px;
+}
+.width-icon {
+  max-width: 60px;
+  min-width: 60px;
+}
+.width-control {
+  max-width: 100px;
+  min-width: 100px;
+}
+/**
+ *  UTILITY   
+ *  
+ */
+
+.align-text.right {
+  text-align: right;
+  padding-right: 15px;
+}
+.align-text.center {
+  text-align: center;
+}
+.clear {
+  clear: both;
+}
+.dark {
+  background-color: #bbbbbb !important;
+}
+.ellips {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.float.left {
+  float: left;
+}
+.float.right {
+  float: right;
+}
+.hidden {
+  display: none;
+}
+.pointer {
+  cursor: pointer;
+}
+.nudge-left {
+  padding-left: 5px;
+}
+.nudge-right {
+  padding-right: 5px;
+}

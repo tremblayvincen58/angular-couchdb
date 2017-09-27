@@ -1,0 +1,75 @@
+/**
+ *
+ *
+ */
+/*
+* Basic UI  ==================================================================
+*
+*/
+
+header {
+  background-color: black;
+  display: table;
+}
+header .breadcrumb {
+  color: white;
+  font-size: .67em;
+  list-style: none;
+  padding: 15px 0 15px 15px;
+}
+header .breadcrumb li a {
+  text-decoration: none;
+  color: white;
+}
+header .breadcrumb > li {
+  display: inline-block;
+  padding: 0 4px;
+}
+header .breadcrumb > li + li:before {
+  padding: 0 3px;
+  color: white;
+  content: "/\00a0";
+}
+header .breadcrumb span {
+  color: white;
+}
+header .breadcrumb span.fa {
+  color: white;
+  padding-right: 4px;
+}
+.button,
+.test {
+  font-size: 14pt;
+  height: auto;
+  line-height: 22pt;
+  margin: 10px;
+  padding: 10px;
+  width: 75%;
+}
+.button {
+  background-color: #222222;
+  color: white;
+}
+.button:hover {
+  cursor: pointer;
+  color: orange;
+}
+.button i,
+.button:hover i {
+  padding-right: 8px;
+}
+.test {
+  background-color: white;
+  border: 1px solid #bbbbbb;
+}
+.test .passed,
+.test .fa.fa-thumbs-o-up {
+  color: green;
+}
+.test .failed,
+.test .fa.fa-thumbs-down {
+  color: firebrick;
+}
+.test .data {
+  color: teal;
+}

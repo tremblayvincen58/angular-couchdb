@@ -1,0 +1,402 @@
+/**
+ *  LAYOUT   =================================================================== 
+ *
+ *  Use: 
+ *      General page layout rules.
+ *
+ *  Versions:
+ *      0.1 - 06-Dec-2013 
+ *
+ *   ===========================================================================  
+ */
+
+/*
+  LESS CONTANTS
+ */
+
+@black:             #000000;
+@padWidth:          768px;
+@pageBackground:    #F0F0F0;
+@phoneWidth:        320px;
+@selectedColor:     #111111;
+@hoverColor:        #b9b9b9;
+@tileHoverColor:    #a07f00;
+@shl_dark_gray:     #49504F;
+@shl_light_green:   rgb(159, 207, 116);
+@white:             #FFFFFF;
+
+/**
+ *  GLOBAL rules of layout
+ *  
+ */
+
+/* Apply a natural box layout model to all elements */
+*,
+*:before, :before,
+*:after, :after {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+ }
+
+html, body {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif !important;
+  font-size: 16pt !important;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  margin: 0px;
+  min-width: @phoneWidth;
+  padding: 0px;
+
+  header {    
+    display: table;
+    height: 2em;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .page,
+  .view-container,
+  .view {
+    height: 100%;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  /*   UI horizontal menu   */
+  .ui.menu.horizontal {
+    color: #49504F;
+    margin-bottom: .75em;
+    position: relative;
+    height: 2em;
+
+    li {
+      border: 1px solid @pageBackground;
+      color: #333;
+      display: inline-block;
+      list-style: none;
+      margin: 0 .80em 0 0;
+      padding: 10px 13px 9px;
+    }
+
+    li:hover {
+      background-color: @hoverColor;
+      border: 1px solid @hoverColor;
+      color: @black;
+      cursor: pointer;
+    }
+
+    li.selected {
+      background-color: @selectedColor;
+      border: 1px solid @selectedColor;
+      color: #fff;
+    } 
+
+    li:last-child {
+      margin-right: 0;
+    }   
+  } 
+}
+
+.details,
+.features,
+.headlines,
+.tiles {
+  position: relative;
+  margin: 4.5em 2em 0 5em;
+}
+
+.features {
+  margin: 0em 2em 1em 5em; 
+}
+
+.tiles {
+  margin-top: 0;
+  min-height: 6em;
+
+  .group {
+    min-width: 480px;
+  }
+
+  .tile {
+    background-color: @white;
+    color: #111111;
+    display: inline-block;
+    height: 7em;
+    margin: 4px 4px 0 4px;
+    min-width: 7em;
+    position: relative;
+    width: 7em;
+
+    a.client,
+    a.client:active,
+    a.client:visited,
+    a.client:hover,
+    a.home,
+    a.home:active,
+    a.home:visited,
+    a.home:hover {
+      color: @black;
+      display: block;
+      height: 7em;
+      margin: 0;
+      min-width: 7em;
+      text-decoration: none;
+      width: 7em;
+    } 
+
+    .abbreviation,
+    .description {
+      font-weight: 300;
+      position: absolute;
+    }
+
+    .abbreviation {
+      text-transform: uppercase; 
+    }
+
+    .description {
+      font-size: .6em;
+    }
+
+    a.client:hover,
+    a.home:hover {
+      color: @white;
+      text-shadow: 1px 1px 0 #222;
+    }
+
+    a.client {
+
+      .abbreviation {
+        font-size: 1.8em;        
+        left: 5px;       
+        top: 2px;
+      }
+
+      .description {       
+        left: 6px;
+        top: 50px;
+      }
+    } 
+
+    a.home {
+      height: 10em;
+      min-width: 10em;
+      width: 10em;
+
+      .abbreviation {
+        font-size: 2em;
+        color: @white;
+        left: 10px;
+        top: 10px;
+      }
+
+      .description {
+        color: @white;
+        bottom: 10px;
+        right: 10px;
+        text-align: right;
+      }
+    }
+
+    .orders {
+      bottom: 5px;
+      font-size: 2.5em;
+      position: absolute;
+      right: 5px;
+    }   
+  }  
+
+  .tile:hover {
+    background-color: @tileHoverColor;
+    color: @white;
+    cursor: pointer;
+  }
+
+  .tile.home {
+    height: 10em;
+    width: 10em;
+  }
+
+  .tile.new {
+    background-color: green;
+    margin-right: -1px;
+
+    a,
+    a:active,
+    a:visited,
+    a:hover {
+      color: @white;
+      display: block;
+      height: 7em;
+      margin: 0;
+      min-width: 7em;
+      text-decoration: none;
+      width: 7em;
+    } 
+
+    .abbreviation.add {
+      background: transparent url(../img/svg/add.svg) 7px 9px no-repeat;
+      background-size: 60px 60px;
+      height: 80px;
+      width: 80px;
+    }
+
+    .description.add {
+      color: @white;
+      top: 125px;
+      right: 10px;
+      text-align: right;
+    }
+  }
+
+  .tile.new:hover {
+    background-color: #00AA00;
+    border-color: #00AA00;
+    margin-right: -1px;
+  }  
+
+  .tile.red {
+    background-color: #B22222;
+  }
+
+  .tile.blue {
+    background-color: blue;
+  }
+
+  .tile.cobalt {
+    background-color: #0047AB;
+  }
+
+  .tile.darkgreen {
+    background-color: #003d18;
+  }  
+
+  .tile.green {
+    background-color: green;
+  }
+
+  .tile.purple {
+    background-color: purple;
+  }
+
+  .tile.brown {
+    background-color: #873514;
+  }
+
+  .tile.orange {
+    background-color: #C35817;
+  }
+
+  .tile.teal {
+    background-color: teal;
+  }
+
+  .tile.yellow {
+    background-color: yellow;
+  }
+
+  .tile.gold {
+    background-color: gold;
+  }
+
+  .tile.white {
+    background-color: @white;
+  }
+
+  .tile.black {
+    background-color: @black;
+  }
+}
+
+/*  Columns   ================================================================*/
+
+.width-name {
+  max-width: 240px;
+  min-width: 200px;
+}
+
+.width-id {
+  max-width: 100px;
+  min-width: 50px;
+}
+
+.width-date {
+  max-width: 100px;
+  min-width: 90px;
+}
+
+.width-type {
+  max-width: 100px;
+  min-width: 75px;
+}
+
+.width-icon {
+  max-width: 60px;
+  min-width: 60px;
+}
+
+.width-control {
+  max-width: 100px;
+  min-width: 100px;
+}
+
+/**
+ *  UTILITY   
+ *  
+ */
+
+.align-text.right {
+  text-align: right;
+  padding-right: 15px;
+}
+
+.align-text.center {
+  text-align: center;
+}
+
+.clear {
+  clear: both;
+}
+
+.dark {
+  background-color: #BBBBBB !important;
+}
+
+.ellips {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.float.left {
+  float: left;
+}
+
+.float.right {
+  float: right;
+}
+
+.hidden {
+  display: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.nudge-left {
+  padding-left: 5px;
+}
+
+.nudge-right {
+  padding-right: 5px;
+}

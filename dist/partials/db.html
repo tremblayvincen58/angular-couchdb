@@ -1,0 +1,76 @@
+<!-- PARTIAL:
+        Name:       TBD
+        Use:        TBD
+        Version:    0.1
+-->
+
+<div class="grid">
+    <div class="unit whole">
+        <section class="headlines">
+            <h1>Angular-Couch</h1>
+            <h3>The Simplest Possible CouchDB Service for Angular Apps</h3>
+        </section>
+    </div>
+</div>
+
+<div class="grid">
+    <div class="unit whole metro">
+        <div class="button" ng-click="_runTests(tests)" ng-show="!show.testsComplete"><i class="fa fa-arrow-circle-right"></i> Run the test suite
+        </div>
+        <div class="button" ng-click="_runTests(tests)" ng-show="show.testsComplete"><i class="fa fa-circle"></i> Test suite completed. Check console for details.
+        </div>
+    </div>
+</div>
+
+<div class="grid">
+    <div class="unit whole metro">
+        <div class="test" ng-show="tests.UUID.run">
+            <span ng-show="tests.UUID.results"><i class="fa fa-thumbs-o-up"></i></span>
+            <span ng-show="!tests.UUID.results"><i class="fa fa-thumbs-down"></i></span>
+            <span ng-class="{passed: tests.UUID.results, failed: !tests.UUID.results}">1. Get ({{tests.UUID.count}}) unique documents ids</span>
+            <span class="results" ng-show="tests.UUID.results"> : {{tests.UUID.data.length}} ids generated: e.g. <span class="data">{{tests.UUID.data[0]}}</span>.</span>
+        </div>
+
+        <div class="test" ng-show="tests.POST.run">
+            <span ng-show="tests.POST.results"><i class="fa fa-thumbs-o-up"></i></span>
+            <span ng-show="!tests.POST.results"><i class="fa fa-thumbs-down"></i></span>
+            <span ng-class="{passed: tests.POST.results, failed: !tests.POST.results}">2. Save (1) document without supplying a document id</span>
+            <span class="results" ng-show="tests.POST.results"> : Saved document: <span class="data">{{tests.POST.data}}</span>.</span>
+        </div>
+
+        <div class="test" ng-show="tests.PUT.run">
+            <span ng-show="tests.PUT.results"><i class="fa fa-thumbs-o-up"></i></span>
+            <span ng-show="!tests.PUT.results"><i class="fa fa-thumbs-down"></i></span>
+            <span ng-class="{passed: tests.PUT.results, failed: !tests.PUT.results}">3. Save (4) documents, supplying document ids</span>
+            <span class="results" ng-show="tests.PUT.results"> : Saved documents: <span class="data">{{tests.PUT.data}}</span>.</span>
+        </div>
+
+        <div class="test" ng-show="tests.GETbyDocId.run">
+            <span ng-show="tests.GETbyDocId.results"><i class="fa fa-thumbs-o-up"></i></span>
+            <span ng-show="!tests.GETbyDocId.results"><i class="fa fa-thumbs-down"></i></span>
+            <span ng-class="{passed: tests.GETbyDocId.results, failed: !tests.GETbyDocId.results}">4. Get document by <b>document id</b>, with and without a <b>revision id</b></span>
+            <span class="results" ng-show="tests.GETbyDocId.results"> : Document retrieved by id: <span class="data">{{tests.GETbyDocId.data.id}}</span> and again, with Revision number: <span class="data">{{tests.GETbyDocId.data.rev}}</span>.</span>
+        </div>
+
+        <div class="test" ng-show="tests.GETbyKey.run">
+            <span ng-show="tests.GETbyKey.results"><i class="fa fa-thumbs-o-up"></i></span>
+            <span ng-show="!tests.GETbyKey.results"><i class="fa fa-thumbs-down"></i></span>
+            <span ng-class="{passed: tests.GETbyKey.results, failed: !tests.GETbyKey.results}">5. Get document by <b>key</b>, then using only <b>start key</b>, then using <b>start</b> and <b>end</b> keys</span>
+            <span class="results" ng-show="tests.GETbyKey.results"> : Documents retrieved by Key: <span class="data">{{tests.GETbyKey.data}}</span>.</span>
+        </div>
+
+        <div class="test" ng-show="tests.UPDATE.run">
+            <span ng-show="tests.UPDATE.results"><i class="fa fa-thumbs-o-up"></i></span>
+            <span ng-show="!tests.UPDATE.results"><i class="fa fa-thumbs-down"></i></span>
+            <span ng-class="{passed: tests.UPDATE.results, failed: !tests.UPDATE.results}">6. Update a document with revised data and a new property</span>
+            <span class="results" ng-show="tests.UPDATE.results"><span > : Updated document <span class="data">{{tests.UPDATE.data}}</span>.</span>
+        </div>
+        
+        <div class="test" ng-show="tests.DELETE.run">
+            <span ng-show="tests.DELETE.results"><i class="fa fa-thumbs-o-up"></i></span>
+            <span ng-show="!tests.DELETE.results"><i class="fa fa-thumbs-down"></i></span>
+            <span ng-class="{passed: tests.DELETE.results, failed: !tests.DELETE.results}">7. Delete a document</span>     
+            <span ng-show="tests.DELETE.results"><span class="results"> : Deleted document with id of: {{tests.DELETE.data}}.</span></span>
+        </div>
+    </div>
+</div>
